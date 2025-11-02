@@ -8,6 +8,8 @@ public class LoginForm extends javax.swing.JFrame {
     private BankSystem bank = BankSystem.getInstance();
     private Admin admin;
     private RegisterForm registerForm;
+    private Customer customer;
+    
     /**
      * Creates new form LoginForm
      */
@@ -16,6 +18,10 @@ public class LoginForm extends javax.swing.JFrame {
         
         admin = new Admin("admin", "admin123", "System", "Administrator");
         bank.registerAdmin(admin);
+        
+        customer = new Customer("marc", "marc123", "Marc", "Darel");
+        bank.registerCustomer(customer);
+        bank.createAccount(customer);
     }
 
     /**
@@ -81,6 +87,7 @@ public class LoginForm extends javax.swing.JFrame {
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setText("Login");
         btnLogin.setBorder(null);
+        btnLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);
@@ -91,6 +98,7 @@ public class LoginForm extends javax.swing.JFrame {
         btnSignUp.setForeground(new java.awt.Color(0, 153, 0));
         btnSignUp.setText("Sign Up");
         btnSignUp.setBorder(null);
+        btnSignUp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSignUp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSignUpActionPerformed(evt);
@@ -170,7 +178,7 @@ public class LoginForm extends javax.swing.JFrame {
             this.resetFields();
         } else if(currentUser instanceof Customer customer) {
             this.setVisible(false);
-            BankForm bankForm = new BankForm(this, tfUsername.getText());
+            BankForm bankForm = new BankForm(this, customer);
             this.resetFields();
         }
     }//GEN-LAST:event_btnLoginActionPerformed

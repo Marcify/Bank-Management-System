@@ -71,6 +71,7 @@ public class RegisterForm extends javax.swing.JFrame {
         btnCancel.setForeground(new java.awt.Color(0, 153, 0));
         btnCancel.setText("Cancel");
         btnCancel.setBorder(null);
+        btnCancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelActionPerformed(evt);
@@ -82,6 +83,7 @@ public class RegisterForm extends javax.swing.JFrame {
         btnConfirm.setForeground(new java.awt.Color(255, 255, 255));
         btnConfirm.setText("Confirm");
         btnConfirm.setBorder(null);
+        btnConfirm.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnConfirm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConfirmActionPerformed(evt);

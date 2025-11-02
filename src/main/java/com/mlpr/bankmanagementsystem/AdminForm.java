@@ -49,6 +49,7 @@ public class AdminForm extends javax.swing.JFrame {
         btnLogout.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnLogout.setForeground(new java.awt.Color(255, 255, 255));
         btnLogout.setText("Log out");
+        btnLogout.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLogoutActionPerformed(evt);
@@ -57,6 +58,7 @@ public class AdminForm extends javax.swing.JFrame {
 
         btnShowUsers.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnShowUsers.setText("View All Users");
+        btnShowUsers.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnShowUsers.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnShowUsersActionPerformed(evt);
@@ -65,6 +67,7 @@ public class AdminForm extends javax.swing.JFrame {
 
         btnShowAccounts.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnShowAccounts.setText("View All Accounts");
+        btnShowAccounts.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnShowAccounts.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnShowAccountsActionPerformed(evt);

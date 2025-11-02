@@ -15,11 +15,11 @@ public class Customer extends User {
         return account;
     }
 
-    public void viewBalance() {
+    public String viewBalance() {
         if (account != null) {
-            System.out.println("Balance: ₱" + account.getBalance());
+            return "₱" + account.getBalance();
         } else {
-            System.out.println("No account found!");
+            return "No account found!";
         }
     }
 }

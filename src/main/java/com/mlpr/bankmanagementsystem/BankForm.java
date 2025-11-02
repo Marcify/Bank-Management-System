@@ -1,6 +1,7 @@
 package com.mlpr.bankmanagementsystem;
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 public class BankForm extends javax.swing.JFrame {
     
@@ -8,23 +9,30 @@ public class BankForm extends javax.swing.JFrame {
 
     private LoginForm loginForm;
     private BankSystem bank = BankSystem.getInstance();
+    private Customer customer;
+    private DepositForm depositForm;
+    private WithdrawForm withdrawForm;
+    private BalanceForm balanceForm;
+    private AccountInfoForm accountInfoForm;
+    
     /**
      * Creates new form BankForm
      */
-    public BankForm(LoginForm loginForm, String username) {
+    public BankForm(LoginForm loginForm, Customer customer) {
         initComponents();
-        System.out.println("CUSTOMER LOGGED IN AS " + username);
+        System.out.println("CUSTOMER LOGGED IN AS " + customer.getUsername());
         
-        btnDeposit.setBackground(Color.ORANGE);
-        btnWithdraw.setBackground(Color.WHITE);
-        btnViewBalance.setBackground(Color.WHITE);
-        btnViewAccount.setBackground(Color.WHITE);
+        lblFullName.setText(customer.getFullName());
         
-        DepositPanel.setEnabled(true);
-        
+//        btnDeposit.setBackground(Color.ORANGE);
+//        btnWithdraw.setBackground(Color.WHITE);
+//        btnViewBalance.setBackground(Color.WHITE);
+//        btnViewAccount.setBackground(Color.WHITE);
+
         this.setVisible(true);
         
         this.loginForm = loginForm;
+        this.customer = customer;
     }
     
     public BankForm() {
@@ -40,167 +48,181 @@ public class BankForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblLogo = new javax.swing.JLabel();
-        btnDeposit = new javax.swing.JButton();
-        btnWithdraw = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
+        btnDeposit = new javax.swing.JButton();
+        lblLogo = new javax.swing.JLabel();
         btnViewAccount = new javax.swing.JButton();
+        btnWithdraw = new javax.swing.JButton();
         btnViewBalance = new javax.swing.JButton();
-        DepositPanel = new javax.swing.JPanel();
-        lblAdminPanel = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        lblAdminPanel1 = new javax.swing.JLabel();
-        btnDepositBalance = new javax.swing.JButton();
-        lblAdminPanel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        lblFullName = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        lblLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblLogo.setIcon(new javax.swing.ImageIcon("C:\\Users\\rick\\Desktop\\BankLogo6.png")); // NOI18N
-
-        btnDeposit.setBackground(java.awt.Color.orange);
-        btnDeposit.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnDeposit.setText("Deposit");
-        btnDeposit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDepositActionPerformed(evt);
-            }
-        });
-
-        btnWithdraw.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnWithdraw.setText("Withdraw");
-        btnWithdraw.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnWithdrawActionPerformed(evt);
-            }
-        });
 
         btnLogout.setBackground(new java.awt.Color(204, 0, 0));
         btnLogout.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnLogout.setForeground(new java.awt.Color(255, 255, 255));
         btnLogout.setText("Log out");
+        btnLogout.setBorder(null);
+        btnLogout.setBorderPainted(false);
         btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLogoutActionPerformed(evt);
             }
         });
 
+        btnDeposit.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnDeposit.setForeground(new java.awt.Color(0, 153, 0));
+        btnDeposit.setText("Deposit");
+        btnDeposit.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 0)));
+        btnDeposit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnDeposit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDepositActionPerformed(evt);
+            }
+        });
+
+        lblLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblLogo.setIcon(new javax.swing.ImageIcon("C:\\Users\\rick\\Desktop\\BankLogo6.png")); // NOI18N
+
         btnViewAccount.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnViewAccount.setForeground(new java.awt.Color(0, 153, 0));
         btnViewAccount.setText("View Account Info");
+        btnViewAccount.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 0)));
         btnViewAccount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewAccountActionPerformed(evt);
             }
         });
 
+        btnWithdraw.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnWithdraw.setForeground(new java.awt.Color(0, 153, 0));
+        btnWithdraw.setText("Withdraw");
+        btnWithdraw.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 0)));
+        btnWithdraw.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnWithdrawActionPerformed(evt);
+            }
+        });
+
         btnViewBalance.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnViewBalance.setForeground(new java.awt.Color(0, 153, 0));
         btnViewBalance.setText("View Balance");
+        btnViewBalance.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 0)));
         btnViewBalance.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewBalanceActionPerformed(evt);
             }
         });
 
-        DepositPanel.setBackground(new java.awt.Color(204, 204, 204));
-        DepositPanel.setEnabled(false);
-        DepositPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Welcome,");
 
-        lblAdminPanel.setBackground(new java.awt.Color(255, 204, 0));
-        lblAdminPanel.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        lblAdminPanel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAdminPanel.setText("Enter Amount:");
-        DepositPanel.add(lblAdminPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 224, 405, -1));
-
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        DepositPanel.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 262, 237, 40));
-
-        lblAdminPanel1.setBackground(new java.awt.Color(255, 204, 0));
-        lblAdminPanel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        lblAdminPanel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAdminPanel1.setText("DEPOSIT");
-        DepositPanel.add(lblAdminPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 154, 405, -1));
-
-        btnDepositBalance.setBackground(java.awt.Color.orange);
-        btnDepositBalance.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnDepositBalance.setText("Deposit");
-        btnDepositBalance.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDepositBalanceActionPerformed(evt);
-            }
-        });
-        DepositPanel.add(btnDepositBalance, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 320, 200, 50));
-
-        lblAdminPanel2.setBackground(new java.awt.Color(255, 204, 0));
-        lblAdminPanel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        lblAdminPanel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAdminPanel2.setText("Hello, {Full Name}");
-        DepositPanel.add(lblAdminPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 60, 405, -1));
+        lblFullName.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lblFullName.setForeground(new java.awt.Color(0, 153, 0));
+        lblFullName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblFullName.setText("{Full Name}");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(134, 134, 134)
+                        .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(113, 113, 113))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
+                        .addGap(21, 21, 21)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnViewAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnViewBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnWithdraw, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnDeposit, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(DepositPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btnDeposit, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnWithdraw, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btnViewBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnViewAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(lblFullName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnDeposit, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnWithdraw, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnViewBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnViewAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 16, Short.MAX_VALUE))
-                    .addComponent(DepositPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addGap(12, 12, 12)
+                .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblFullName)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnDeposit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnWithdraw, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnViewAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnViewBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDepositActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDepositActionPerformed
-        btnDeposit.setBackground(Color.ORANGE);
-        btnWithdraw.setBackground(Color.WHITE);
-        btnViewBalance.setBackground(Color.WHITE);
-        btnViewAccount.setBackground(Color.WHITE);
+        if (depositForm != null && depositForm.isDisplayable()) {
+            JOptionPane.showMessageDialog(null, "Deposit is already open!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         
-        DepositPanel.setEnabled(true);
+        if (withdrawForm != null && withdrawForm.isDisplayable()) {
+            JOptionPane.showMessageDialog(null, "Withdraw must be closed first!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        if (accountInfoForm != null && accountInfoForm.isDisplayable()) {
+            JOptionPane.showMessageDialog(null, "Account Info must be closed first!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        if (balanceForm != null && balanceForm.isDisplayable()) {
+            JOptionPane.showMessageDialog(null, "Balance must be closed first!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        depositForm = new DepositForm(customer);
     }//GEN-LAST:event_btnDepositActionPerformed
 
     private void btnWithdrawActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnWithdrawActionPerformed
-        btnWithdraw.setBackground(Color.ORANGE);
-        btnDeposit.setBackground(Color.WHITE);
-        btnViewBalance.setBackground(Color.WHITE);
-        btnViewAccount.setBackground(Color.WHITE);
+        if (withdrawForm != null && withdrawForm.isDisplayable()) {
+            JOptionPane.showMessageDialog(null, "Withdraw is already open!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        if (depositForm != null && depositForm.isDisplayable()) {
+            JOptionPane.showMessageDialog(null, "Deposit must be closed first!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        if (accountInfoForm != null && accountInfoForm.isDisplayable()) {
+            JOptionPane.showMessageDialog(null, "Account Info must be closed first!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        if (balanceForm != null && balanceForm.isDisplayable()) {
+            JOptionPane.showMessageDialog(null, "Balance must be closed first!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        withdrawForm = new WithdrawForm(customer);
     }//GEN-LAST:event_btnWithdrawActionPerformed
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
@@ -209,26 +231,51 @@ public class BankForm extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLogoutActionPerformed
 
     private void btnViewAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewAccountActionPerformed
-        btnViewAccount.setBackground(Color.ORANGE);
-        btnWithdraw.setBackground(Color.WHITE);
-        btnDeposit.setBackground(Color.WHITE);
-        btnViewBalance.setBackground(Color.WHITE);
+        if (accountInfoForm != null && accountInfoForm.isDisplayable()) {
+            JOptionPane.showMessageDialog(null, "Account Info is already open!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        if (withdrawForm != null && withdrawForm.isDisplayable()) {
+            JOptionPane.showMessageDialog(null, "Withdraw must be closed first!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        if (depositForm != null && depositForm.isDisplayable()) {
+            JOptionPane.showMessageDialog(null, "Deposit must be closed first!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        if (balanceForm != null && balanceForm.isDisplayable()) {
+            JOptionPane.showMessageDialog(null, "Balance must be closed first!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        accountInfoForm = new AccountInfoForm(customer);
     }//GEN-LAST:event_btnViewAccountActionPerformed
 
     private void btnViewBalanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewBalanceActionPerformed
-        btnViewBalance.setBackground(Color.ORANGE);
-        btnViewAccount.setBackground(Color.WHITE);
-        btnWithdraw.setBackground(Color.WHITE);
-        btnDeposit.setBackground(Color.WHITE);
+        if (balanceForm != null && balanceForm.isDisplayable()) {
+            JOptionPane.showMessageDialog(null, "Balance is already open!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (accountInfoForm != null && accountInfoForm.isDisplayable()) {
+            JOptionPane.showMessageDialog(null, "Account Info must be closed first!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        if (withdrawForm != null && withdrawForm.isDisplayable()) {
+            JOptionPane.showMessageDialog(null, "Withdraw must be closed first!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        if (depositForm != null && depositForm.isDisplayable()) {
+            JOptionPane.showMessageDialog(null, "Deposit must be closed first!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        balanceForm = new BalanceForm(customer);
     }//GEN-LAST:event_btnViewBalanceActionPerformed
-
-    private void btnDepositBalanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDepositBalanceActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnDepositBalanceActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -256,17 +303,13 @@ public class BankForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel DepositPanel;
     private javax.swing.JButton btnDeposit;
-    private javax.swing.JButton btnDepositBalance;
     private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnViewAccount;
     private javax.swing.JButton btnViewBalance;
     private javax.swing.JButton btnWithdraw;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JLabel lblAdminPanel;
-    private javax.swing.JLabel lblAdminPanel1;
-    private javax.swing.JLabel lblAdminPanel2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblFullName;
     private javax.swing.JLabel lblLogo;
     // End of variables declaration//GEN-END:variables
 }
