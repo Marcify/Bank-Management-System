@@ -31,6 +31,7 @@ public class AllUsersForm extends javax.swing.JFrame {
         lblViewUsers = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Bank Management System | All Users");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

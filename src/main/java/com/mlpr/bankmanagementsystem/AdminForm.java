@@ -39,6 +39,7 @@ public class AdminForm extends javax.swing.JFrame {
         lblLogo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Bank Management System | Admin Panel");
 
         lblAdminPanel.setBackground(new java.awt.Color(255, 204, 0));
         lblAdminPanel.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N

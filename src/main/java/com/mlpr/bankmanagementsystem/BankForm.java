@@ -58,6 +58,7 @@ public class BankForm extends javax.swing.JFrame {
         lblFullName = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Bank Management System");
 
         btnLogout.setBackground(new java.awt.Color(204, 0, 0));
         btnLogout.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N

@@ -39,6 +39,7 @@ public class WithdrawForm extends javax.swing.JFrame {
         btnWithdraw = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Bank Management System | Withdraw");
 
         lblLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLogo.setIcon(new javax.swing.ImageIcon("C:\\Users\\rick\\Desktop\\BankLogo6.png")); // NOI18N

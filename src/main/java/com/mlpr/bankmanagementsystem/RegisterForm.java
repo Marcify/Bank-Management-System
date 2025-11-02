@@ -46,6 +46,7 @@ public class RegisterForm extends javax.swing.JFrame {
         tfPassword = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Bank Management System | Sign Up");
 
         lblUsername.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblUsername.setText("Username");

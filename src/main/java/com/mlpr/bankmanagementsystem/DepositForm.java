@@ -39,6 +39,7 @@ public class DepositForm extends javax.swing.JFrame {
         tfAmount = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Bank Management System | Deposit");
 
         lblLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLogo.setIcon(new javax.swing.ImageIcon("C:\\Users\\rick\\Desktop\\BankLogo6.png")); // NOI18N

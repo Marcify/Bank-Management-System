@@ -38,6 +38,7 @@ public class BalanceForm extends javax.swing.JFrame {
         lblBalance = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Bank Management System | Balance");
 
         lblLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLogo.setIcon(new javax.swing.ImageIcon("C:\\Users\\rick\\Desktop\\BankLogo6.png")); // NOI18N
