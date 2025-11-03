@@ -137,7 +137,7 @@
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\rick\Desktop\BankLogo6.png"/>
+          <Image iconType="3" name="/com/mlpr/bankmanagementsystem/assets/BankLogo6.png"/>
         </Property>
       </Properties>
     </Component>
@@ -150,7 +150,7 @@
           <Color blue="0" green="99" red="0" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\rick\Desktop\viewaccountinfo.png"/>
+          <Image iconType="3" name="/com/mlpr/bankmanagementsystem/assets/viewaccountinfo.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="View Account Info"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -174,7 +174,7 @@
           <Color blue="0" green="0" red="cc" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\rick\Desktop\withdraw.png"/>
+          <Image iconType="3" name="/com/mlpr/bankmanagementsystem/assets/withdraw.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Withdraw"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -198,7 +198,7 @@
           <Color blue="0" green="99" red="0" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\rick\Desktop\viewbalance.png"/>
+          <Image iconType="3" name="/com/mlpr/bankmanagementsystem/assets/viewbalance.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="View Balance"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">

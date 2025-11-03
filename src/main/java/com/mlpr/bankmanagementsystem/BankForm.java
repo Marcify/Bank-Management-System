@@ -85,11 +85,11 @@ public class BankForm extends javax.swing.JFrame {
         });
 
         lblLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblLogo.setIcon(new javax.swing.ImageIcon("C:\\Users\\rick\\Desktop\\BankLogo6.png")); // NOI18N
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mlpr/bankmanagementsystem/assets/BankLogo6.png"))); // NOI18N
 
         btnViewAccount.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnViewAccount.setForeground(new java.awt.Color(0, 153, 0));
-        btnViewAccount.setIcon(new javax.swing.ImageIcon("C:\\Users\\rick\\Desktop\\viewaccountinfo.png")); // NOI18N
+        btnViewAccount.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mlpr/bankmanagementsystem/assets/viewaccountinfo.png"))); // NOI18N
         btnViewAccount.setText("View Account Info");
         btnViewAccount.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 0)));
         btnViewAccount.addActionListener(new java.awt.event.ActionListener() {
@@ -100,7 +100,7 @@ public class BankForm extends javax.swing.JFrame {
 
         btnWithdraw.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnWithdraw.setForeground(new java.awt.Color(204, 0, 0));
-        btnWithdraw.setIcon(new javax.swing.ImageIcon("C:\\Users\\rick\\Desktop\\withdraw.png")); // NOI18N
+        btnWithdraw.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mlpr/bankmanagementsystem/assets/withdraw.png"))); // NOI18N
         btnWithdraw.setText("Withdraw");
         btnWithdraw.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 0, 0)));
         btnWithdraw.addActionListener(new java.awt.event.ActionListener() {
@@ -111,7 +111,7 @@ public class BankForm extends javax.swing.JFrame {
 
         btnViewBalance.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnViewBalance.setForeground(new java.awt.Color(0, 153, 0));
-        btnViewBalance.setIcon(new javax.swing.ImageIcon("C:\\Users\\rick\\Desktop\\viewbalance.png")); // NOI18N
+        btnViewBalance.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mlpr/bankmanagementsystem/assets/viewbalance.png"))); // NOI18N
         btnViewBalance.setText("View Balance");
         btnViewBalance.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 0)));
         btnViewBalance.addActionListener(new java.awt.event.ActionListener() {

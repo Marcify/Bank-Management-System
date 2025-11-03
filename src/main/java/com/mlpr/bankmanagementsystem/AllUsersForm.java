@@ -57,7 +57,7 @@ public class AllUsersForm extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         lblLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblLogo.setIcon(new javax.swing.ImageIcon("C:\\Users\\rick\\Desktop\\BankLogo6.png")); // NOI18N
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mlpr/bankmanagementsystem/assets/BankLogo6.png"))); // NOI18N
 
         lblViewUsers.setBackground(new java.awt.Color(255, 204, 0));
         lblViewUsers.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N

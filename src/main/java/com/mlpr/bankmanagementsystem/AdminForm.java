@@ -45,7 +45,7 @@ public class AdminForm extends javax.swing.JFrame {
         lblAdminPanel.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         lblAdminPanel.setForeground(new java.awt.Color(204, 0, 0));
         lblAdminPanel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAdminPanel.setIcon(new javax.swing.ImageIcon("C:\\Users\\rick\\Desktop\\adminpanel.png")); // NOI18N
+        lblAdminPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mlpr/bankmanagementsystem/assets/adminpanel.png"))); // NOI18N
         lblAdminPanel.setText("Admin Panel");
 
         btnLogout.setBackground(new java.awt.Color(204, 0, 0));
@@ -78,7 +78,7 @@ public class AdminForm extends javax.swing.JFrame {
         });
 
         lblLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblLogo.setIcon(new javax.swing.ImageIcon("C:\\Users\\rick\\Desktop\\BankLogo6.png")); // NOI18N
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mlpr/bankmanagementsystem/assets/BankLogo6.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
