@@ -60,7 +60,8 @@ public class AllUsersForm extends javax.swing.JFrame {
         lblLogo.setIcon(new javax.swing.ImageIcon("C:\\Users\\rick\\Desktop\\BankLogo6.png")); // NOI18N
 
         lblViewUsers.setBackground(new java.awt.Color(255, 204, 0));
-        lblViewUsers.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lblViewUsers.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        lblViewUsers.setForeground(new java.awt.Color(0, 154, 0));
         lblViewUsers.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblViewUsers.setText("Viewing All Users");
 
@@ -71,13 +72,13 @@ public class AllUsersForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 523, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(164, 164, 164)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblLogo)
-                            .addComponent(lblViewUsers, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(lblLogo))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblViewUsers, javax.swing.GroupLayout.PREFERRED_SIZE, 523, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 523, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -86,8 +87,8 @@ public class AllUsersForm extends javax.swing.JFrame {
                 .addGap(12, 12, 12)
                 .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblViewUsers, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addComponent(lblViewUsers)
+                .addGap(24, 24, 24)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(29, Short.MAX_VALUE))
         );

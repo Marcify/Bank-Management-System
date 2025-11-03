@@ -46,6 +46,7 @@ public class BalanceForm extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 153, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\rick\\Desktop\\viewbalance.png")); // NOI18N
         jLabel1.setText("BALANCE");
 
         lblBalance.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N

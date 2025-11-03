@@ -74,6 +74,7 @@ public class BankForm extends javax.swing.JFrame {
 
         btnDeposit.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnDeposit.setForeground(new java.awt.Color(0, 153, 0));
+        btnDeposit.setIcon(new javax.swing.ImageIcon("C:\\Users\\rick\\Desktop\\deposit.png")); // NOI18N
         btnDeposit.setText("Deposit");
         btnDeposit.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 0)));
         btnDeposit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -88,6 +89,7 @@ public class BankForm extends javax.swing.JFrame {
 
         btnViewAccount.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnViewAccount.setForeground(new java.awt.Color(0, 153, 0));
+        btnViewAccount.setIcon(new javax.swing.ImageIcon("C:\\Users\\rick\\Desktop\\viewaccountinfo.png")); // NOI18N
         btnViewAccount.setText("View Account Info");
         btnViewAccount.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 0)));
         btnViewAccount.addActionListener(new java.awt.event.ActionListener() {
@@ -97,9 +99,10 @@ public class BankForm extends javax.swing.JFrame {
         });
 
         btnWithdraw.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnWithdraw.setForeground(new java.awt.Color(0, 153, 0));
+        btnWithdraw.setForeground(new java.awt.Color(204, 0, 0));
+        btnWithdraw.setIcon(new javax.swing.ImageIcon("C:\\Users\\rick\\Desktop\\withdraw.png")); // NOI18N
         btnWithdraw.setText("Withdraw");
-        btnWithdraw.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 0)));
+        btnWithdraw.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 0, 0)));
         btnWithdraw.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnWithdrawActionPerformed(evt);
@@ -108,6 +111,7 @@ public class BankForm extends javax.swing.JFrame {
 
         btnViewBalance.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnViewBalance.setForeground(new java.awt.Color(0, 153, 0));
+        btnViewBalance.setIcon(new javax.swing.ImageIcon("C:\\Users\\rick\\Desktop\\viewbalance.png")); // NOI18N
         btnViewBalance.setText("View Balance");
         btnViewBalance.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 0)));
         btnViewBalance.addActionListener(new java.awt.event.ActionListener() {
@@ -151,7 +155,7 @@ public class BankForm extends javax.swing.JFrame {
                                         .addComponent(btnViewAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addComponent(lblFullName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

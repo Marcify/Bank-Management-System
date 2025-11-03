@@ -45,15 +45,16 @@ public class WithdrawForm extends javax.swing.JFrame {
         lblLogo.setIcon(new javax.swing.ImageIcon("C:\\Users\\rick\\Desktop\\BankLogo6.png")); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 153, 0));
+        jLabel1.setForeground(new java.awt.Color(204, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\rick\\Desktop\\withdraw.png")); // NOI18N
         jLabel1.setText("WITHDRAW");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Enter Amount:");
 
-        btnWithdraw.setBackground(new java.awt.Color(0, 153, 0));
+        btnWithdraw.setBackground(new java.awt.Color(204, 0, 0));
         btnWithdraw.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnWithdraw.setForeground(new java.awt.Color(255, 255, 255));
         btnWithdraw.setText("Withdraw");
