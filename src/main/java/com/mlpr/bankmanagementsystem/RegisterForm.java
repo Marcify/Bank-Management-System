@@ -19,11 +19,11 @@ public class RegisterForm extends javax.swing.JFrame {
         
         // Load icon from assets package
         try {
-            URL iconUrl = getClass().getResource("/assets/BankLogo4.png");
+            URL iconUrl = getClass().getResource("/BankLogo4.png");
             if (iconUrl != null) {
                 setIconImage(new ImageIcon(iconUrl).getImage());
             } else {
-                System.err.println("Icon not found at /assets/icon.png");
+                System.err.println("Icon not found at /BankLogo4.png");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -66,7 +66,7 @@ public class RegisterForm extends javax.swing.JFrame {
         setTitle("Bank Management System | Sign Up");
 
         lblUsername.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblUsername.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/user.png"))); // NOI18N
+        lblUsername.setIcon(new javax.swing.ImageIcon(getClass().getResource("/user.png"))); // NOI18N
         lblUsername.setText("Username");
         lblUsername.setIconTextGap(10);
 
@@ -77,17 +77,17 @@ public class RegisterForm extends javax.swing.JFrame {
         lblSignUp.setText("Sign Up");
 
         lblPassword.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblPassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/password.png"))); // NOI18N
+        lblPassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/password.png"))); // NOI18N
         lblPassword.setText("Password");
         lblPassword.setIconTextGap(10);
 
         lblLastName.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblLastName.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/identification.png"))); // NOI18N
+        lblLastName.setIcon(new javax.swing.ImageIcon(getClass().getResource("/identification.png"))); // NOI18N
         lblLastName.setText("Last Name");
         lblLastName.setIconTextGap(10);
 
         lblFirstName.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblFirstName.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/identification.png"))); // NOI18N
+        lblFirstName.setIcon(new javax.swing.ImageIcon(getClass().getResource("/identification.png"))); // NOI18N
         lblFirstName.setText("First Name");
         lblFirstName.setIconTextGap(10);
 
@@ -118,7 +118,7 @@ public class RegisterForm extends javax.swing.JFrame {
 
         lblLogo1.setBackground(new java.awt.Color(0, 255, 51));
         lblLogo1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblLogo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/BankLogo4.png"))); // NOI18N
+        lblLogo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BankLogo4.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

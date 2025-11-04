@@ -18,11 +18,11 @@ public class WithdrawForm extends javax.swing.JFrame {
         
         // Load icon from assets package
         try {
-            URL iconUrl = getClass().getResource("/assets/BankLogo4.png");
+            URL iconUrl = getClass().getResource("/withdraw.png");
             if (iconUrl != null) {
                 setIconImage(new ImageIcon(iconUrl).getImage());
             } else {
-                System.err.println("Icon not found at /assets/icon.png");
+                System.err.println("Icon not found at /withdraw.png");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -57,12 +57,12 @@ public class WithdrawForm extends javax.swing.JFrame {
         setTitle("Withdraw");
 
         lblLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/BankLogo6.png"))); // NOI18N
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BankLogo6.png"))); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/withdraw.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/withdraw.png"))); // NOI18N
         jLabel1.setText("WITHDRAW");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N

@@ -1,7 +1,7 @@
 package com.mlpr.bankmanagementsystem;
 import javax.swing.JOptionPane;
-import javax.swing.Icon;
-//import java.net.URL;
+import javax.swing.ImageIcon;
+import java.net.URL;
 
 public class LoginForm extends javax.swing.JFrame {
     
@@ -17,29 +17,22 @@ public class LoginForm extends javax.swing.JFrame {
      */
     public LoginForm() {
         initComponents();
-//        this.setLocationRelativeTo(null);
+        this.setLocationRelativeTo(null);
+              
+        // Load icon from assets package
+        try {
+            URL iconUrl = getClass().getResource("/BankLogo4.png");
+            if (iconUrl != null) {
+                setIconImage(new ImageIcon(iconUrl).getImage());
+            } else {
+                System.err.println("Icon not found at /BankLogo4.png");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         
-//        // DEBUG: Check if resource exists
-//        URL testUrl = getClass().getResource("/com/mlpr/bankmanagementsystem/resources/images/user.png");
-//        System.out.println("Icon URL: " + testUrl);
-//        if (testUrl == null) {
-//            System.err.println("RESOURCE NOT FOUND!");
-//            // Try to list what's actually available
-//            URL packageUrl = getClass().getResource("/com/mlpr/bankmanagementsystem/");
-//            System.out.println("Package URL: " + packageUrl);
-//        }
-//        
-//        // Load icon from assets package
-//        try {
-//            URL iconUrl = getClass().getResource("/com/mlpr/bankmanagementsystem/BankLogo4.png");
-//            if (iconUrl != null) {
-//                setIconImage(new ImageIcon(iconUrl).getImage());
-//            } else {
-//                System.err.println("Icon not found at /com/mlpr/bankmanagementsystem/BankLogo4.png");
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+        customer = new Customer("marcify", "marc123", "Marc", "Darel");
+        bank.registerCustomer(customer);
         
         admin = new Admin("admin", "admin123", "System", "Administrator");
         bank.registerAdmin(admin);
@@ -80,6 +73,7 @@ public class LoginForm extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 153, 0));
 
         lblLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BankLogo4.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -99,7 +93,7 @@ public class LoginForm extends javax.swing.JFrame {
         );
 
         lblUsername.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblUsername.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/user.png"))); // NOI18N
+        lblUsername.setIcon(new javax.swing.ImageIcon(getClass().getResource("/user.png"))); // NOI18N
         lblUsername.setText("Username");
         lblUsername.setIconTextGap(10);
 
@@ -127,6 +121,7 @@ public class LoginForm extends javax.swing.JFrame {
         });
 
         lblPassword1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblPassword1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/password.png"))); // NOI18N
         lblPassword1.setText("Password");
         lblPassword1.setIconTextGap(10);
 
@@ -147,14 +142,9 @@ public class LoginForm extends javax.swing.JFrame {
                             .addComponent(btnSignUp, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE))
                         .addComponent(lblLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(tfPassword))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(34, 34, 34)
-                            .addComponent(lblPassword1))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(34, 34, 34)
-                            .addComponent(lblUsername))))
-                .addContainerGap(279, Short.MAX_VALUE))
+                    .addComponent(lblUsername)
+                    .addComponent(lblPassword1))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

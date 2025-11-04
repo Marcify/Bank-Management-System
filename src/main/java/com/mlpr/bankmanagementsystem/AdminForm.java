@@ -20,11 +20,11 @@ public class AdminForm extends javax.swing.JFrame {
         
         // Load icon from assets package
         try {
-            URL iconUrl = getClass().getResource("/assets/BankLogo4.png");
+            URL iconUrl = getClass().getResource("/adminpanel.png");
             if (iconUrl != null) {
                 setIconImage(new ImageIcon(iconUrl).getImage());
             } else {
-                System.err.println("Icon not found at /assets/icon.png");
+                System.err.println("Icon not found at /adminpanel.png");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -62,7 +62,7 @@ public class AdminForm extends javax.swing.JFrame {
         lblAdminPanel.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         lblAdminPanel.setForeground(new java.awt.Color(204, 0, 0));
         lblAdminPanel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAdminPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/adminpanel.png"))); // NOI18N
+        lblAdminPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/adminpanel.png"))); // NOI18N
         lblAdminPanel.setText("Admin Panel");
         lblAdminPanel.setIconTextGap(10);
 
@@ -99,7 +99,7 @@ public class AdminForm extends javax.swing.JFrame {
         });
 
         lblLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/BankLogo6.png"))); // NOI18N
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BankLogo6.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

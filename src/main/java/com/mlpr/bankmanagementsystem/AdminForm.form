@@ -83,7 +83,7 @@
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/assets/adminpanel.png"/>
+          <Image iconType="3" name="/adminpanel.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Admin Panel"/>
         <Property name="iconTextGap" type="int" value="10"/>
@@ -150,7 +150,7 @@
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/assets/BankLogo6.png"/>
+          <Image iconType="3" name="/BankLogo6.png"/>
         </Property>
       </Properties>
     </Component>
