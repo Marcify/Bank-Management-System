@@ -42,7 +42,7 @@
                   <Component id="lblUsername" min="-2" max="-2" attributes="0"/>
                   <Component id="lblPassword1" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="33" max="32767" attributes="0"/>
+              <EmptySpace pref="29" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -104,7 +104,7 @@
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="cc" red="ff" type="rgb"/>
+          <Color blue="0" green="99" red="0" type="rgb"/>
         </Property>
       </Properties>
 
@@ -136,7 +136,7 @@
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/mlpr/bankmanagementsystem/assets/BankLogo4.png"/>
+              <Image iconType="3" name="/assets/BankLogo4.png"/>
             </Property>
           </Properties>
         </Component>
@@ -148,9 +148,10 @@
           <Font name="Segoe UI" size="18" style="1"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/com/mlpr/bankmanagementsystem/assets/user.png"/>
+          <Image iconType="3" name="/assets/user.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Username"/>
+        <Property name="iconTextGap" type="int" value="10"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnLogin">
@@ -202,9 +203,10 @@
           <Font name="Segoe UI" size="18" style="1"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/com/mlpr/bankmanagementsystem/assets/password.png"/>
+          <Image iconType="3" name="/assets/password.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Password"/>
+        <Property name="iconTextGap" type="int" value="10"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JPasswordField" name="tfPassword">

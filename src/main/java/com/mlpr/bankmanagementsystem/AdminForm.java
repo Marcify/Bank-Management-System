@@ -1,5 +1,8 @@
 package com.mlpr.bankmanagementsystem;
 
+import java.net.URL;
+import javax.swing.ImageIcon;
+
 public class AdminForm extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(AdminForm.class.getName());
@@ -13,6 +16,20 @@ public class AdminForm extends javax.swing.JFrame {
      */
     public AdminForm(LoginForm loginForm, String username) {
         initComponents();
+        this.setLocationRelativeTo(null);
+        
+        // Load icon from assets package
+        try {
+            URL iconUrl = getClass().getResource("/assets/BankLogo4.png");
+            if (iconUrl != null) {
+                setIconImage(new ImageIcon(iconUrl).getImage());
+            } else {
+                System.err.println("Icon not found at /assets/icon.png");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
         System.out.println("Administrator logged in as " + username);
         this.setVisible(true);
         
@@ -45,13 +62,15 @@ public class AdminForm extends javax.swing.JFrame {
         lblAdminPanel.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         lblAdminPanel.setForeground(new java.awt.Color(204, 0, 0));
         lblAdminPanel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAdminPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mlpr/bankmanagementsystem/assets/adminpanel.png"))); // NOI18N
+        lblAdminPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/adminpanel.png"))); // NOI18N
         lblAdminPanel.setText("Admin Panel");
+        lblAdminPanel.setIconTextGap(10);
 
         btnLogout.setBackground(new java.awt.Color(204, 0, 0));
         btnLogout.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnLogout.setForeground(new java.awt.Color(255, 255, 255));
         btnLogout.setText("Log out");
+        btnLogout.setBorder(null);
         btnLogout.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,6 +80,7 @@ public class AdminForm extends javax.swing.JFrame {
 
         btnShowUsers.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnShowUsers.setText("View All Users");
+        btnShowUsers.setBorder(null);
         btnShowUsers.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnShowUsers.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,6 +90,7 @@ public class AdminForm extends javax.swing.JFrame {
 
         btnShowAccounts.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnShowAccounts.setText("View All Accounts");
+        btnShowAccounts.setBorder(null);
         btnShowAccounts.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnShowAccounts.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,7 +99,7 @@ public class AdminForm extends javax.swing.JFrame {
         });
 
         lblLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mlpr/bankmanagementsystem/assets/BankLogo6.png"))); // NOI18N
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/BankLogo6.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

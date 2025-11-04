@@ -25,75 +25,67 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="lblLogo" min="-2" pref="221" max="-2" attributes="0"/>
-                  <Component id="lblSignUp" min="-2" pref="221" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="0" pref="154" max="32767" attributes="0"/>
-              <Component id="btnCancel" min="-2" pref="120" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btnConfirm" min="-2" pref="120" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="tfPassword" alignment="0" pref="210" max="32767" attributes="0"/>
-                      <Component id="tfUsername" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="tfUsername" alignment="0" min="-2" pref="258" max="-2" attributes="0"/>
+                              <Component id="lblUsername" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblFirstName" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="tfFirstName" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lblLastName" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="tfLastName" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lblPassword" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="tfPassword" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="btnCancel" min="-2" pref="120" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="btnConfirm" min="-2" pref="120" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace type="unrelated" pref="38" max="32767" attributes="0"/>
                   </Group>
-                  <Component id="lblUsername" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblPassword" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lblSignUp" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="tfLastName" min="-2" pref="210" max="-2" attributes="0"/>
-                  <Component id="tfFirstName" min="-2" pref="210" max="-2" attributes="0"/>
-                  <Component id="lblLastName" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblFirstName" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="lblLogo" min="-2" pref="112" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
               <Component id="lblSignUp" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblFirstName" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblUsername" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
+              <Component id="lblFirstName" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="tfUsername" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                  <Component id="tfFirstName" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblLastName" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblPassword" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
+              <Component id="tfFirstName" min="-2" pref="40" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="lblLastName" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="tfLastName" pref="40" max="32767" attributes="0"/>
-                  <Component id="tfPassword" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace pref="22" max="32767" attributes="0"/>
+              <Component id="tfLastName" min="-2" pref="40" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="lblUsername" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="tfUsername" min="-2" pref="40" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="lblPassword" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="tfPassword" min="-2" pref="40" max="-2" attributes="0"/>
+              <EmptySpace pref="23" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnCancel" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
                   <Component id="btnConfirm" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
           </Group>
+          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -106,17 +98,10 @@
           <Font name="Segoe UI" size="18" style="1"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/com/mlpr/bankmanagementsystem/assets/user.png"/>
+          <Image iconType="3" name="/assets/user.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Username"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lblLogo">
-      <Properties>
-        <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/com/mlpr/bankmanagementsystem/assets/BankLogo6.png"/>
-        </Property>
+        <Property name="iconTextGap" type="int" value="10"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblSignUp">
@@ -140,9 +125,10 @@
           <Font name="Segoe UI" size="18" style="1"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/com/mlpr/bankmanagementsystem/assets/password.png"/>
+          <Image iconType="3" name="/assets/password.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Password"/>
+        <Property name="iconTextGap" type="int" value="10"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblLastName">
@@ -151,9 +137,10 @@
           <Font name="Segoe UI" size="18" style="1"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/com/mlpr/bankmanagementsystem/assets/identification.png"/>
+          <Image iconType="3" name="/assets/identification.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Last Name"/>
+        <Property name="iconTextGap" type="int" value="10"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblFirstName">
@@ -162,9 +149,10 @@
           <Font name="Segoe UI" size="18" style="1"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/com/mlpr/bankmanagementsystem/assets/identification.png"/>
+          <Image iconType="3" name="/assets/identification.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="First Name"/>
+        <Property name="iconTextGap" type="int" value="10"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="tfFirstName">
@@ -216,5 +204,46 @@
     </Component>
     <Component class="javax.swing.JPasswordField" name="tfPassword">
     </Component>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="99" red="0" type="rgb"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="lblLogo1" pref="273" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                  <Component id="lblLogo1" min="-2" pref="326" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="lblLogo1">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="ff" red="0" type="rgb"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/assets/BankLogo4.png"/>
+            </Property>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
   </SubComponents>
 </Form>

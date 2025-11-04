@@ -1,4 +1,6 @@
 package com.mlpr.bankmanagementsystem;
+import java.net.URL;
+import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 
 public class AllUsersForm extends javax.swing.JFrame {
@@ -11,6 +13,19 @@ public class AllUsersForm extends javax.swing.JFrame {
      */
     public AllUsersForm() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        
+        // Load icon from assets package
+        try {
+            URL iconUrl = getClass().getResource("/assets/BankLogo4.png");
+            if (iconUrl != null) {
+                setIconImage(new ImageIcon(iconUrl).getImage());
+            } else {
+                System.err.println("Icon not found at /assets/icon.png");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         
         populateUserTable();
         
@@ -57,7 +72,7 @@ public class AllUsersForm extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         lblLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mlpr/bankmanagementsystem/assets/BankLogo6.png"))); // NOI18N
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/BankLogo6.png"))); // NOI18N
 
         lblViewUsers.setBackground(new java.awt.Color(255, 204, 0));
         lblViewUsers.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N

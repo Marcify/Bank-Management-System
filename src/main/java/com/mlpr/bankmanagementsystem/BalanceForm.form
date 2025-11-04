@@ -3,7 +3,7 @@
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
-    <Property name="title" type="java.lang.String" value="Bank Management System | Balance"/>
+    <Property name="title" type="java.lang.String" value="Balance"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -60,7 +60,7 @@
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/com/mlpr/bankmanagementsystem/assets/BankLogo6.png"/>
+          <Image iconType="3" name="/assets/BankLogo6.png"/>
         </Property>
       </Properties>
     </Component>
@@ -74,7 +74,7 @@
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/com/mlpr/bankmanagementsystem/assets/viewbalance.png"/>
+          <Image iconType="3" name="/assets/viewbalance.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="BALANCE"/>
       </Properties>

@@ -1,5 +1,7 @@
 package com.mlpr.bankmanagementsystem;
 import javax.swing.JOptionPane;
+import javax.swing.ImageIcon;
+import java.net.URL;
 
 public class LoginForm extends javax.swing.JFrame {
     
@@ -15,6 +17,19 @@ public class LoginForm extends javax.swing.JFrame {
      */
     public LoginForm() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        
+        // Load icon from assets package
+        try {
+            URL iconUrl = getClass().getResource("/assets/BankLogo4.png");
+            if (iconUrl != null) {
+                setIconImage(new ImageIcon(iconUrl).getImage());
+            } else {
+                System.err.println("Icon not found at /assets/icon.png");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         
         admin = new Admin("admin", "admin123", "System", "Administrator");
         bank.registerAdmin(admin);
@@ -52,11 +67,11 @@ public class LoginForm extends javax.swing.JFrame {
         lblLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLogin.setText("Login");
 
-        jPanel1.setBackground(new java.awt.Color(255, 204, 0));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 0));
 
         lblLogo.setBackground(new java.awt.Color(0, 255, 51));
         lblLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mlpr/bankmanagementsystem/assets/BankLogo4.png"))); // NOI18N
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/BankLogo4.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -76,8 +91,9 @@ public class LoginForm extends javax.swing.JFrame {
         );
 
         lblUsername.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblUsername.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mlpr/bankmanagementsystem/assets/user.png"))); // NOI18N
+        lblUsername.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/user.png"))); // NOI18N
         lblUsername.setText("Username");
+        lblUsername.setIconTextGap(10);
 
         btnLogin.setBackground(new java.awt.Color(0, 153, 0));
         btnLogin.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -103,8 +119,9 @@ public class LoginForm extends javax.swing.JFrame {
         });
 
         lblPassword1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblPassword1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mlpr/bankmanagementsystem/assets/password.png"))); // NOI18N
+        lblPassword1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/password.png"))); // NOI18N
         lblPassword1.setText("Password");
+        lblPassword1.setIconTextGap(10);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -125,7 +142,7 @@ public class LoginForm extends javax.swing.JFrame {
                         .addComponent(tfPassword))
                     .addComponent(lblUsername)
                     .addComponent(lblPassword1))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -1,6 +1,8 @@
 package com.mlpr.bankmanagementsystem;
 
 import java.awt.Color;
+import java.net.URL;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class BankForm extends javax.swing.JFrame {
@@ -20,6 +22,20 @@ public class BankForm extends javax.swing.JFrame {
      */
     public BankForm(LoginForm loginForm, Customer customer) {
         initComponents();
+        this.setLocationRelativeTo(null);
+        
+        // Load icon from assets package
+        try {
+            URL iconUrl = getClass().getResource("/assets/BankLogo4.png");
+            if (iconUrl != null) {
+                setIconImage(new ImageIcon(iconUrl).getImage());
+            } else {
+                System.err.println("Icon not found at /assets/icon.png");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
         System.out.println("CUSTOMER LOGGED IN AS " + customer.getUsername());
         
         lblFullName.setText(customer.getFullName());
@@ -66,6 +82,7 @@ public class BankForm extends javax.swing.JFrame {
         btnLogout.setText("Log out");
         btnLogout.setBorder(null);
         btnLogout.setBorderPainted(false);
+        btnLogout.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLogoutActionPerformed(evt);
@@ -74,9 +91,9 @@ public class BankForm extends javax.swing.JFrame {
 
         btnDeposit.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnDeposit.setForeground(new java.awt.Color(0, 153, 0));
-        btnDeposit.setIcon(new javax.swing.ImageIcon("C:\\Users\\rick\\Desktop\\deposit.png")); // NOI18N
+        btnDeposit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/deposit.png"))); // NOI18N
         btnDeposit.setText("Deposit");
-        btnDeposit.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 0)));
+        btnDeposit.setBorder(null);
         btnDeposit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDeposit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,13 +102,14 @@ public class BankForm extends javax.swing.JFrame {
         });
 
         lblLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mlpr/bankmanagementsystem/assets/BankLogo6.png"))); // NOI18N
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/BankLogo6.png"))); // NOI18N
 
         btnViewAccount.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnViewAccount.setForeground(new java.awt.Color(0, 153, 0));
-        btnViewAccount.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mlpr/bankmanagementsystem/assets/viewaccountinfo.png"))); // NOI18N
+        btnViewAccount.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/viewaccountinfo.png"))); // NOI18N
         btnViewAccount.setText("View Account Info");
-        btnViewAccount.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 0)));
+        btnViewAccount.setBorder(null);
+        btnViewAccount.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnViewAccount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewAccountActionPerformed(evt);
@@ -100,9 +118,10 @@ public class BankForm extends javax.swing.JFrame {
 
         btnWithdraw.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnWithdraw.setForeground(new java.awt.Color(204, 0, 0));
-        btnWithdraw.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mlpr/bankmanagementsystem/assets/withdraw.png"))); // NOI18N
+        btnWithdraw.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/withdraw.png"))); // NOI18N
         btnWithdraw.setText("Withdraw");
-        btnWithdraw.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 0, 0)));
+        btnWithdraw.setBorder(null);
+        btnWithdraw.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnWithdraw.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnWithdrawActionPerformed(evt);
@@ -111,9 +130,10 @@ public class BankForm extends javax.swing.JFrame {
 
         btnViewBalance.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnViewBalance.setForeground(new java.awt.Color(0, 153, 0));
-        btnViewBalance.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mlpr/bankmanagementsystem/assets/viewbalance.png"))); // NOI18N
+        btnViewBalance.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/viewbalance.png"))); // NOI18N
         btnViewBalance.setText("View Balance");
-        btnViewBalance.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 0)));
+        btnViewBalance.setBorder(null);
+        btnViewBalance.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnViewBalance.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewBalanceActionPerformed(evt);

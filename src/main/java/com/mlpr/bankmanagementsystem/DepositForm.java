@@ -1,4 +1,6 @@
 package com.mlpr.bankmanagementsystem;
+import java.net.URL;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class DepositForm extends javax.swing.JFrame {
@@ -12,6 +14,19 @@ public class DepositForm extends javax.swing.JFrame {
      */
     public DepositForm(Customer customer) {
         initComponents();
+        this.setLocationRelativeTo(null);
+        
+        // Load icon from assets package
+        try {
+            URL iconUrl = getClass().getResource("/assets/BankLogo4.png");
+            if (iconUrl != null) {
+                setIconImage(new ImageIcon(iconUrl).getImage());
+            } else {
+                System.err.println("Icon not found at /assets/icon.png");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         
         this.setVisible(true);
         
@@ -39,10 +54,10 @@ public class DepositForm extends javax.swing.JFrame {
         tfAmount = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Bank Management System | Deposit");
+        setTitle("Deposit");
 
         lblLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mlpr/bankmanagementsystem/assets/BankLogo6.png"))); // NOI18N
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/BankLogo6.png"))); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 153, 0));
@@ -58,6 +73,8 @@ public class DepositForm extends javax.swing.JFrame {
         btnDeposit.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnDeposit.setForeground(new java.awt.Color(255, 255, 255));
         btnDeposit.setText("Deposit");
+        btnDeposit.setBorder(null);
+        btnDeposit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDeposit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDepositActionPerformed(evt);
@@ -136,13 +153,9 @@ public class DepositForm extends javax.swing.JFrame {
             return;
         }
         
-//        if (amount > account.getBalance()) {
-//            JOptionPane.showMessageDialog(null, "Insufficient balance!", "Error", JOptionPane.ERROR_MESSAGE);
-//            return;
-//        }
-        
         account.deposit(amount);
-        JOptionPane.showMessageDialog(null, "Deposit of ₱" + amount + " successful!\nNew Balance: " + account.getBalance(), "Success", JOptionPane.PLAIN_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Deposit of ₱" + amount + " successful!\nNew Balance: ₱" + account.getBalance(), "Success", JOptionPane.PLAIN_MESSAGE);
+        this.dispose();
     }//GEN-LAST:event_btnDepositActionPerformed
 
     private void tfAmountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfAmountActionPerformed
