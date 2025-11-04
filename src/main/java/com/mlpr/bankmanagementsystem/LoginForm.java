@@ -1,7 +1,7 @@
 package com.mlpr.bankmanagementsystem;
 import javax.swing.JOptionPane;
-import javax.swing.ImageIcon;
-import java.net.URL;
+import javax.swing.Icon;
+//import java.net.URL;
 
 public class LoginForm extends javax.swing.JFrame {
     
@@ -17,19 +17,29 @@ public class LoginForm extends javax.swing.JFrame {
      */
     public LoginForm() {
         initComponents();
-        this.setLocationRelativeTo(null);
+//        this.setLocationRelativeTo(null);
         
-        // Load icon from assets package
-        try {
-            URL iconUrl = getClass().getResource("/com/mlpr/bankmanagementsystem/BankLogo4.png");
-            if (iconUrl != null) {
-                setIconImage(new ImageIcon(iconUrl).getImage());
-            } else {
-                System.err.println("Icon not found at /com/mlpr/bankmanagementsystem/BankLogo4.png");
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        // DEBUG: Check if resource exists
+//        URL testUrl = getClass().getResource("/com/mlpr/bankmanagementsystem/resources/images/user.png");
+//        System.out.println("Icon URL: " + testUrl);
+//        if (testUrl == null) {
+//            System.err.println("RESOURCE NOT FOUND!");
+//            // Try to list what's actually available
+//            URL packageUrl = getClass().getResource("/com/mlpr/bankmanagementsystem/");
+//            System.out.println("Package URL: " + packageUrl);
+//        }
+//        
+//        // Load icon from assets package
+//        try {
+//            URL iconUrl = getClass().getResource("/com/mlpr/bankmanagementsystem/BankLogo4.png");
+//            if (iconUrl != null) {
+//                setIconImage(new ImageIcon(iconUrl).getImage());
+//            } else {
+//                System.err.println("Icon not found at /com/mlpr/bankmanagementsystem/BankLogo4.png");
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
         
         admin = new Admin("admin", "admin123", "System", "Administrator");
         bank.registerAdmin(admin);
@@ -89,7 +99,7 @@ public class LoginForm extends javax.swing.JFrame {
         );
 
         lblUsername.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblUsername.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mlpr/bankmanagementsystem/resources/images/user.png"))); // NOI18N
+        lblUsername.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/user.png"))); // NOI18N
         lblUsername.setText("Username");
         lblUsername.setIconTextGap(10);
 

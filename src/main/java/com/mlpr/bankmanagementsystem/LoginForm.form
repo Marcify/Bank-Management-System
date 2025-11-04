@@ -150,7 +150,7 @@
           <Font name="Segoe UI" size="18" style="1"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/com/mlpr/bankmanagementsystem/resources/images/user.png"/>
+          <Image iconType="3" name="/resources/images/user.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Username"/>
         <Property name="iconTextGap" type="int" value="10"/>
