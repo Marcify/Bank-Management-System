@@ -18,10 +18,6 @@ public class LoginForm extends javax.swing.JFrame {
         
         admin = new Admin("admin", "admin123", "System", "Administrator");
         bank.registerAdmin(admin);
-        
-        customer = new Customer("marc", "marc123", "Marc", "Darel");
-        bank.registerCustomer(customer);
-        bank.createAccount(customer);
     }
 
     /**
@@ -173,7 +169,7 @@ public class LoginForm extends javax.swing.JFrame {
             return;
         }
         
-        currentUser = bank.login(tfUsername.getText(), tfPassword.getText());
+        currentUser = bank.login(tfUsername.getText(), String.valueOf(tfPassword.getPassword()));
         
         if(currentUser instanceof Admin admin) {
             this.setVisible(false);
