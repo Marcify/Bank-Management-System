@@ -19,7 +19,7 @@ public class LoginForm extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
               
-        // Load icon from assets package
+        // Load icon
         try {
             URL iconUrl = getClass().getResource("/BankLogo4.png");
             if (iconUrl != null) {
@@ -30,9 +30,6 @@ public class LoginForm extends javax.swing.JFrame {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
-        customer = new Customer("marcify", "marc123", "Marc", "Darel");
-        bank.registerCustomer(customer);
         
         admin = new Admin("admin", "admin123", "System", "Administrator");
         bank.registerAdmin(admin);

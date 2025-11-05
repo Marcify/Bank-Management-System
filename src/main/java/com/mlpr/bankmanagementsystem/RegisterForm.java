@@ -17,7 +17,7 @@ public class RegisterForm extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         
-        // Load icon from assets package
+        // Load icon
         try {
             URL iconUrl = getClass().getResource("/BankLogo4.png");
             if (iconUrl != null) {
