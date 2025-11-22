@@ -2,7 +2,11 @@ package com.mlpr.bankmanagementsystem;
 import java.util.*;
 import javax.swing.JOptionPane;
 
-public class BankSystem {
+/**
+ * BankSystem implementing AccountManageable interface
+ * Demonstrates Singleton pattern and Interface implementation
+ */
+public class BankSystem implements AccountManageable {
     private List<User> users = new ArrayList<>();
     private List<Account> accounts = new ArrayList<>();
     private int accountCounter = 1; // used to auto-generate account numbers
@@ -35,6 +39,7 @@ public class BankSystem {
         for (User u : users) {
             if (u.getUsername().equals(username) && u.getPassword().equals(password)) {
                 System.out.println("Login successful!\nWelcome, " + u.getFirstName() + "!");
+                u.displayDashboard(); // Polymorphism: calls appropriate dashboard
                 return u;
             }
         }
@@ -49,14 +54,39 @@ public class BankSystem {
         return accountNumber;
     }
 
-    public Account createAccount(Customer customer) {
+    @Override
+    public void createAccount(Customer customer) {
         String accNum = generateAccountNumber();
         Account acc = new Account(accNum, customer);
         accounts.add(acc);
         customer.setAccount(acc);
-        // System.out.println("Account created successfully!");
-        // System.out.println("Your new Account Number: " + accNum);
-        return acc;
+    }
+    
+    @Override
+    public void viewAccountDetails(String accountNumber) {
+        for (Account acc : accounts) {
+            if (acc.getAccountNumber().equals(accountNumber)) {
+                System.out.println("Account Number: " + acc.getAccountNumber());
+                System.out.println("Owner: " + acc.getOwner().getFullName());
+                System.out.println("Balance: ₱" + acc.getBalance());
+                System.out.println(acc.getTransactionHistory());
+                return;
+            }
+        }
+        System.out.println("Account not found!");
+    }
+    
+    @Override
+    public boolean deleteAccount(String accountNumber) {
+        for (Account acc : accounts) {
+            if (acc.getAccountNumber().equals(accountNumber)) {
+                accounts.remove(acc);
+                System.out.println("Account " + accountNumber + " deleted successfully!");
+                return true;
+            }
+        }
+        System.out.println("Account not found!");
+        return false;
     }
     
     public List<Account> getAccounts() { return accounts; }

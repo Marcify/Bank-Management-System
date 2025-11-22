@@ -1,6 +1,10 @@
 package com.mlpr.bankmanagementsystem;
 
-public class User {
+/**
+ * Abstract base class demonstrating Abstraction OOP concept
+ * Cannot be instantiated directly, must be extended
+ */
+public abstract class User {
     private String username;
     private String password;
     private String firstName;
@@ -12,6 +16,12 @@ public class User {
         this.firstName = firstName;
         this.lastName = lastName;
     }
+    
+    // Abstract method - must be implemented by subclasses
+    public abstract String getUserRole();
+    
+    // Abstract method - different behavior for Customer vs Admin
+    public abstract void displayDashboard();
     
     public String getUsername() { return username; }
     public String getPassword() { return password; }
@@ -25,6 +35,6 @@ public class User {
     public void setLastName(String lastName) { this.lastName = lastName; }
     
     public String toString() {
-        return "Name: " + firstName + " " + lastName + "\nUsername: " + username;
+        return "Name: " + firstName + " " + lastName + "\nUsername: " + username + "\nRole: " + getUserRole();
     }
 }
