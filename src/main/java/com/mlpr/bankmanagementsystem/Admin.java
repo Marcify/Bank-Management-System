@@ -1,9 +1,25 @@
 package com.mlpr.bankmanagementsystem;
 import java.util.*;
 
+/**
+ * Admin class extending abstract User class
+ * Demonstrates Inheritance and implements abstract methods
+ */
 public class Admin extends User {
     public Admin(String username, String password, String firstName, String lastName) {
         super(username, password, firstName, lastName);
+    }
+    
+    @Override
+    public String getUserRole() {
+        return "ADMINISTRATOR";
+    }
+    
+    @Override
+    public void displayDashboard() {
+        System.out.println("=== Admin Dashboard ===");
+        System.out.println("Administrator: " + getFullName());
+        System.out.println("Access Level: Full System Access");
     }
 
     public void viewAllAccounts(List<Account> accounts) {
@@ -16,9 +32,10 @@ public class Admin extends User {
     }
 
     public void viewAllUsers(List<User> users) {
-        String result = "\n=== All Registered Users ===";
+        System.out.println("\n=== All Registered Users ===");
         for (User u : users) {
-            System.out.println("- " + u.getFirstName() + " " + u.getLastName() + " (" + u.getUsername() + ")");
+            System.out.println("- " + u.getFirstName() + " " + u.getLastName() + 
+                             " (" + u.getUsername() + ") - Role: " + u.getUserRole());
         }
     }
 }
