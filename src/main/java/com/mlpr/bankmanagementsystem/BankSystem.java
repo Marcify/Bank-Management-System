@@ -78,9 +78,9 @@ public class BankSystem implements AccountManageable {
     
     @Override
     public boolean deleteAccount(String accountNumber) {
-        for (Account acc : accounts) {
-            if (acc.getAccountNumber().equals(accountNumber)) {
-                accounts.remove(acc);
+        for (int i = 0; i < accounts.size(); i++) {
+            if (accounts.get(i).getAccountNumber().equals(accountNumber)) {
+                accounts.remove(i);
                 System.out.println("Account " + accountNumber + " deleted successfully!");
                 return true;
             }
