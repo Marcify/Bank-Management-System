@@ -10,7 +10,7 @@ public class WithdrawForm extends javax.swing.JFrame {
     private Account account;
     
     /**
-     * Creates new form DepositForm
+     * Creates new form WithdrawForm
      */
     public WithdrawForm(Customer customer) {
         initComponents();
@@ -128,10 +128,15 @@ public class WithdrawForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnWithdrawActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnWithdrawActionPerformed
+        if (account == null) {
+            JOptionPane.showMessageDialog(null, "Account not found!", "Error", JOptionPane.ERROR_MESSAGE);
+            this.dispose();
+            return;
+        }
+        
         String text = tfAmount.getText().trim();
         
         if (text.isEmpty()) {
-            System.out.println("This is text: " + text);
             JOptionPane.showMessageDialog(null, "Please enter an amount!", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }

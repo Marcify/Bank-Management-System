@@ -29,9 +29,7 @@ public class RegisterForm extends javax.swing.JFrame {
             e.printStackTrace();
         }
         
-        System.out.println("USER IS NOW REGISTERING");
         this.setVisible(true);
-        
         this.loginForm = loginForm;
     }
     
@@ -204,30 +202,30 @@ public class RegisterForm extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCancelActionPerformed
 
     private void btnConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmActionPerformed
-        if(tfUsername.getText().equals("")) {
-            System.out.println("Please enter a username");
+        if(tfUsername.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Please enter a username!", "Validation Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
         
-        if(tfFirstName.getText().equals("")) {
-            System.out.println("Please enter a password");
+        if(tfFirstName.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Please enter a first name!", "Validation Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
         
-        if(tfLastName.getText().equals("")) {
-            System.out.println("Please enter a first name");
+        if(tfLastName.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Please enter a last name!", "Validation Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
         
-        if(tfPassword.getText().equals("")) {
-            System.out.println("Please enter a last name");
+        if(tfPassword.getPassword().length == 0) {
+            JOptionPane.showMessageDialog(null, "Please enter a password!", "Validation Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
         
-        String username = tfUsername.getText();
-        String password = tfPassword.getText();
-        String firstName = tfFirstName.getText();
-        String lastName = tfLastName.getText();
+        String username = tfUsername.getText().trim();
+        String password = String.valueOf(tfPassword.getPassword());
+        String firstName = tfFirstName.getText().trim();
+        String lastName = tfLastName.getText().trim();
         
         Customer customer = new Customer(username, password, firstName, lastName);
         

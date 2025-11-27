@@ -131,10 +131,15 @@ public class DepositForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDepositActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDepositActionPerformed
+        if (account == null) {
+            JOptionPane.showMessageDialog(null, "Account not found!", "Error", JOptionPane.ERROR_MESSAGE);
+            this.dispose();
+            return;
+        }
+        
         String text = tfAmount.getText().trim();
         
         if (text.isEmpty()) {
-            System.out.println("This is text: " + text);
             JOptionPane.showMessageDialog(null, "Please enter an amount!", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
@@ -159,7 +164,7 @@ public class DepositForm extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDepositActionPerformed
 
     private void tfAmountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfAmountActionPerformed
-        // TODO add your handling code here:
+        btnDepositActionPerformed(evt);
     }//GEN-LAST:event_tfAmountActionPerformed
 
     /**

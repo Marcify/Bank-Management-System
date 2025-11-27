@@ -8,9 +8,7 @@ public class LoginForm extends javax.swing.JFrame {
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(LoginForm.class.getName());
     
     private BankSystem bank = BankSystem.getInstance();
-    private Admin admin;
     private RegisterForm registerForm;
-    private Customer customer;
     
     /**
      * Creates new form LoginForm
@@ -31,7 +29,8 @@ public class LoginForm extends javax.swing.JFrame {
             e.printStackTrace();
         }
         
-        admin = new Admin("admin", "admin123", "System", "Administrator");
+        // Initialize default admin account
+        Admin admin = new Admin("admin", "admin123", "System", "Administrator");
         bank.registerAdmin(admin);
     }
 
@@ -175,13 +174,13 @@ public class LoginForm extends javax.swing.JFrame {
 
         User currentUser = null;
         
-        if(tfUsername.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Please enter a username!", "Login Failed", JOptionPane.OK_OPTION + JOptionPane.ERROR_MESSAGE);
+        if(tfUsername.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Please enter a username!", "Login Failed", JOptionPane.ERROR_MESSAGE);
             return;
         }
         
-        if(tfPassword.getPassword().equals("")) {
-            JOptionPane.showMessageDialog(null, "Please enter a password!", "Login Failed", JOptionPane.OK_OPTION + JOptionPane.ERROR_MESSAGE);
+        if(tfPassword.getPassword().length == 0) {
+            JOptionPane.showMessageDialog(null, "Please enter a password!", "Login Failed", JOptionPane.ERROR_MESSAGE);
             return;
         }
         
@@ -233,9 +232,6 @@ public class LoginForm extends javax.swing.JFrame {
         tfUsername.setText("");
         tfPassword.setText("");
     }
-   
-    
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogin;

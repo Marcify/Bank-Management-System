@@ -10,7 +10,7 @@ public class AccountInfoForm extends javax.swing.JFrame {
     private Account account;
     
     /**
-     * Creates new form DepositForm
+     * Creates new form AccountInfoForm
      */
     public AccountInfoForm(Customer customer) {
         initComponents();
@@ -33,8 +33,13 @@ public class AccountInfoForm extends javax.swing.JFrame {
         this.customer = customer;
         this.account = customer.getAccount();
         
-        lblAccNo.setText(account.getAccountNumber());
-        lblFullName.setText(customer.getFullName());
+        if (account == null) {
+            lblAccNo.setText("N/A");
+            lblFullName.setText(customer.getFullName());
+        } else {
+            lblAccNo.setText(account.getAccountNumber());
+            lblFullName.setText(customer.getFullName());
+        }
     }
     
     public AccountInfoForm() {

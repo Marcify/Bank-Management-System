@@ -1,8 +1,7 @@
 package com.mlpr.bankmanagementsystem;
 
 /**
- * Interface demonstrating the Interface OOP concept
- * Defines contract for all objects that can perform transactions
+ * Interface
  */
 public interface Transactable {
     boolean deposit(double amount);

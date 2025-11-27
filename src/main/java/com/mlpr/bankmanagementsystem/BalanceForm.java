@@ -10,7 +10,7 @@ public class BalanceForm extends javax.swing.JFrame {
     private Account account;
     
     /**
-     * Creates new form DepositForm
+     * Creates new form BalanceForm
      */
     public BalanceForm(Customer customer) {
         initComponents();
@@ -33,7 +33,11 @@ public class BalanceForm extends javax.swing.JFrame {
         this.customer = customer;
         this.account = customer.getAccount();
         
-        lblBalance.setText(customer.viewBalance());
+        if (account == null) {
+            lblBalance.setText("No account found!");
+        } else {
+            lblBalance.setText(customer.viewBalance());
+        }
     }
     
     public BalanceForm() {

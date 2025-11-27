@@ -1,6 +1,5 @@
 package com.mlpr.bankmanagementsystem;
 
-import java.awt.Color;
 import java.net.URL;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -16,6 +15,7 @@ public class BankForm extends javax.swing.JFrame {
     private WithdrawForm withdrawForm;
     private BalanceForm balanceForm;
     private AccountInfoForm accountInfoForm;
+    private TransactionHistoryForm transactionHistoryForm;
     
     /**
      * Creates new form BankForm
@@ -35,8 +35,6 @@ public class BankForm extends javax.swing.JFrame {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
-        System.out.println("CUSTOMER LOGGED IN AS " + customer.getUsername());
         
         lblFullName.setText(customer.getFullName());
         
@@ -67,11 +65,12 @@ public class BankForm extends javax.swing.JFrame {
         btnLogout = new javax.swing.JButton();
         btnDeposit = new javax.swing.JButton();
         lblLogo = new javax.swing.JLabel();
-        btnViewAccount = new javax.swing.JButton();
+        btnTransactionHistory = new javax.swing.JButton();
         btnWithdraw = new javax.swing.JButton();
         btnViewBalance = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         lblFullName = new javax.swing.JLabel();
+        btnViewAccount = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Bank Management System");
@@ -104,15 +103,15 @@ public class BankForm extends javax.swing.JFrame {
         lblLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BankLogo6.png"))); // NOI18N
 
-        btnViewAccount.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnViewAccount.setForeground(new java.awt.Color(0, 153, 0));
-        btnViewAccount.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viewaccountinfo.png"))); // NOI18N
-        btnViewAccount.setText("View Account Info");
-        btnViewAccount.setBorder(null);
-        btnViewAccount.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnViewAccount.addActionListener(new java.awt.event.ActionListener() {
+        btnTransactionHistory.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnTransactionHistory.setForeground(new java.awt.Color(0, 153, 0));
+        btnTransactionHistory.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viewaccountinfo.png"))); // NOI18N
+        btnTransactionHistory.setText("Transaction History");
+        btnTransactionHistory.setBorder(null);
+        btnTransactionHistory.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnTransactionHistory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnViewAccountActionPerformed(evt);
+                btnTransactionHistoryActionPerformed(evt);
             }
         });
 
@@ -149,16 +148,24 @@ public class BankForm extends javax.swing.JFrame {
         lblFullName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblFullName.setText("{Full Name}");
 
+        btnViewAccount.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnViewAccount.setForeground(new java.awt.Color(0, 153, 0));
+        btnViewAccount.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viewaccountinfo.png"))); // NOI18N
+        btnViewAccount.setText("View Account Info");
+        btnViewAccount.setBorder(null);
+        btnViewAccount.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnViewAccount.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewAccountActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(134, 134, 134)
-                        .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(113, 113, 113))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -174,7 +181,13 @@ public class BankForm extends javax.swing.JFrame {
                                         .addGap(18, 18, 18)
                                         .addComponent(btnViewAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addComponent(lblFullName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(134, 134, 134)
+                        .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(120, 120, 120)
+                        .addComponent(btnTransactionHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(49, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -186,15 +199,17 @@ public class BankForm extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblFullName)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnDeposit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnWithdraw, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnViewAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnViewBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnViewBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnViewAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
+                .addComponent(btnTransactionHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20))
         );
@@ -302,6 +317,35 @@ public class BankForm extends javax.swing.JFrame {
         balanceForm = new BalanceForm(customer);
     }//GEN-LAST:event_btnViewBalanceActionPerformed
 
+    private void btnTransactionHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTransactionHistoryActionPerformed
+        if (transactionHistoryForm != null && transactionHistoryForm.isDisplayable()) {
+            JOptionPane.showMessageDialog(null, "Transaction History is already open!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        if (withdrawForm != null && withdrawForm.isDisplayable()) {
+            JOptionPane.showMessageDialog(null, "Withdraw must be closed first!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        if (depositForm != null && depositForm.isDisplayable()) {
+            JOptionPane.showMessageDialog(null, "Deposit must be closed first!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        if (accountInfoForm != null && accountInfoForm.isDisplayable()) {
+            JOptionPane.showMessageDialog(null, "Account Info must be closed first!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        if (balanceForm != null && balanceForm.isDisplayable()) {
+            JOptionPane.showMessageDialog(null, "Balance must be closed first!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        transactionHistoryForm = new TransactionHistoryForm(customer);
+    }//GEN-LAST:event_btnTransactionHistoryActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -330,6 +374,7 @@ public class BankForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDeposit;
     private javax.swing.JButton btnLogout;
+    private javax.swing.JButton btnTransactionHistory;
     private javax.swing.JButton btnViewAccount;
     private javax.swing.JButton btnViewBalance;
     private javax.swing.JButton btnWithdraw;

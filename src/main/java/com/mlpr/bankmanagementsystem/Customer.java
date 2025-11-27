@@ -1,21 +1,24 @@
 package com.mlpr.bankmanagementsystem;
 
 /**
- * Customer class extending abstract User class
- * Demonstrates Inheritance and implements abstract methods
+ * Inheritance and Abstract Method Overriding
  */
 public class Customer extends User {
+    // Encapsulation: Private field
     private Account account;
 
+    // Inheritance: Using super() to call parent constructor
     public Customer(String username, String password, String firstName, String lastName) {
         super(username, password, firstName, lastName);
     }
     
+    // Abstract Method Overriding
     @Override
     public String getUserRole() {
         return "CUSTOMER";
     }
     
+    // Abstract Method Overriding - Polymorphism
     @Override
     public void displayDashboard() {
         System.out.println("=== Customer Dashboard ===");

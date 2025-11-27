@@ -1,10 +1,10 @@
 package com.mlpr.bankmanagementsystem;
 
 /**
- * Abstract base class demonstrating Abstraction OOP concept
- * Cannot be instantiated directly, must be extended
+ * Abstraction
  */
 public abstract class User {
+    // Encapsulation: Private fields
     private String username;
     private String password;
     private String firstName;
@@ -17,12 +17,13 @@ public abstract class User {
         this.lastName = lastName;
     }
     
-    // Abstract method - must be implemented by subclasses
+    // Abstract method
     public abstract String getUserRole();
     
-    // Abstract method - different behavior for Customer vs Admin
+    // Abstract method
     public abstract void displayDashboard();
     
+    // Encapsulation: Getters
     public String getUsername() { 
         return username;
     }
@@ -43,11 +44,13 @@ public abstract class User {
         return firstName + " " + lastName;
     }
     
+    // Encapsulation: Setters
     public void setUsername(String username) { 
         this.username = username;
     }
     
-    public void setPassword(String password) { 
+    // Encapsulation: Setter with validation
+    public void setPassword(String password) {
         if (password != null && password.length() >= 8) {
             this.password = password;
         }
@@ -59,9 +62,5 @@ public abstract class User {
     
     public void setLastName(String lastName) { 
         this.lastName = lastName;
-    }
-    
-    public String toString() {
-        return "Name: " + firstName + " " + lastName + "\nUsername: " + username + "\nRole: " + getUserRole();
     }
 }

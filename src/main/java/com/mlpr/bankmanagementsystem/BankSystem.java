@@ -3,8 +3,7 @@ import java.util.*;
 import javax.swing.JOptionPane;
 
 /**
- * BankSystem implementing AccountManageable interface
- * Demonstrates Singleton pattern and Interface implementation
+ * Interface Implementation
  */
 public class BankSystem implements AccountManageable {
     private List<User> users = new ArrayList<>();
@@ -32,18 +31,17 @@ public class BankSystem implements AccountManageable {
 
     public void registerAdmin(Admin admin) {
         users.add(admin);
-        System.out.println("Admin account registration successful!");
     }
 
+    // Polymorphism
     public User login(String username, String password) {
         for (User u : users) {
             if (u.getUsername().equals(username) && u.getPassword().equals(password)) {
-                System.out.println("Login successful!\nWelcome, " + u.getFirstName() + "!");
                 u.displayDashboard(); // Polymorphism: calls appropriate dashboard
                 return u;
             }
         }
-        JOptionPane.showMessageDialog(null, "Invalid username or password!", "Login Failed", JOptionPane.OK_OPTION + JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Invalid username or password!", "Login Failed", JOptionPane.ERROR_MESSAGE);
         return null;
     }
 
@@ -54,25 +52,13 @@ public class BankSystem implements AccountManageable {
         return accountNumber;
     }
 
+    // Interface Implementation
     @Override
     public void createAccount(Customer customer) {
         String accNum = generateAccountNumber();
         Account acc = new Account(accNum, customer);
         accounts.add(acc);
         customer.setAccount(acc);
-    }
-    
-    @Override
-    public void viewAccountDetails(String accountNumber) {
-        for (Account acc : accounts) {
-            if (acc.getAccountNumber().equals(accountNumber)) {
-                System.out.println("Account Number: " + acc.getAccountNumber());
-                System.out.println("Owner: " + acc.getOwner().getFullName());
-                System.out.println("Balance: ₱" + acc.getBalance());
-                return;
-            }
-        }
-        System.out.println("Account not found!");
     }
     
     public List<Account> getAccounts() { return accounts; }

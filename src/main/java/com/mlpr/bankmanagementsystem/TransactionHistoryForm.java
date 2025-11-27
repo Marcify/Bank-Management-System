@@ -2,33 +2,41 @@ package com.mlpr.bankmanagementsystem;
 import java.net.URL;
 import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
+import java.util.List;
 
-public class AllAccountsForm extends javax.swing.JFrame {
+public class TransactionHistoryForm extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(AllAccountsForm.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TransactionHistoryForm.class.getName());
 
-    private BankSystem bank = BankSystem.getInstance();
+    private Customer customer;
+    private Account account;
+    
     /**
-     * Creates new form AllAccountsForm
+     * Creates new form TransactionHistoryForm
      */
-    public AllAccountsForm() {
+    public TransactionHistoryForm(Customer customer) {
         initComponents();
         this.setLocationRelativeTo(null);
         
         // Load icon
         try {
-            URL iconUrl = getClass().getResource("/adminpanel.png");
+            URL iconUrl = getClass().getResource("/viewbalance.png");
             if (iconUrl != null) {
                 setIconImage(new ImageIcon(iconUrl).getImage());
             } else {
-                System.err.println("Icon not found at /adminpanel.png");
+                System.err.println("Icon not found at /viewbalance.png");
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
         
-        populateAccountTable();
+        this.customer = customer;
+        if (customer != null) {
+            this.account = customer.getAccount();
+        }
         
+        populateTransactionTable();
+        this.setVisible(true);
     }
 
     /**
@@ -43,10 +51,9 @@ public class AllAccountsForm extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         lblLogo = new javax.swing.JLabel();
-        lblViewAccounts = new javax.swing.JLabel();
+        lblTransactionHistory = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Bank Management System | All Accounts");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -56,7 +63,7 @@ public class AllAccountsForm extends javax.swing.JFrame {
                 {null, null, null}
             },
             new String [] {
-                "Account Number", "Owner", "Balance (₱)"
+                "Transaction History", "Amount", "Timestamp"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -74,11 +81,11 @@ public class AllAccountsForm extends javax.swing.JFrame {
         lblLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BankLogo6.png"))); // NOI18N
 
-        lblViewAccounts.setBackground(new java.awt.Color(255, 204, 0));
-        lblViewAccounts.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        lblViewAccounts.setForeground(new java.awt.Color(0, 154, 0));
-        lblViewAccounts.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblViewAccounts.setText("Viewing All Accounts");
+        lblTransactionHistory.setBackground(new java.awt.Color(255, 204, 0));
+        lblTransactionHistory.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        lblTransactionHistory.setForeground(new java.awt.Color(0, 154, 0));
+        lblTransactionHistory.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTransactionHistory.setText("Transaction History");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -92,9 +99,9 @@ public class AllAccountsForm extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblViewAccounts, javax.swing.GroupLayout.PREFERRED_SIZE, 523, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblTransactionHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 523, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 523, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -102,10 +109,10 @@ public class AllAccountsForm extends javax.swing.JFrame {
                 .addGap(12, 12, 12)
                 .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblViewAccounts)
+                .addComponent(lblTransactionHistory)
                 .addGap(24, 24, 24)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -133,27 +140,50 @@ public class AllAccountsForm extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new AllAccountsForm().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new TransactionHistoryForm(null).setVisible(true));
     }
     
-    private void populateAccountTable() {
+    private void populateTransactionTable() {
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         model.setRowCount(0); // clear existing rows
 
-        for (Account acc : bank.getAccounts()) {
+        if (account == null) {
+            return;
+        }
+
+        List<String> transactions = account.getTransactionHistory();
+        
+        for (String transaction : transactions) {
+            String[] parts = transaction.split("] ");
+            String timestamp = parts[0].substring(1);
+            String rest = parts[1];
+            
+            String transactionType;
+            String amount;
+            
+            if (rest.startsWith("DEPOSIT")) {
+                transactionType = "DEPOSIT";
+                amount = rest.split("₱")[1].split(" \\|")[0];
+            } else if (rest.startsWith("WITHDRAW")) {
+                transactionType = "WITHDRAW";
+                amount = rest.split("₱")[1].split(" \\|")[0];
+            } else {
+                transactionType = "Account Created";
+                amount = "N/A";
+            }
+            
             model.addRow(new Object[]{
-                acc.getAccountNumber(),
-                acc.getOwner().getFirstName() + " " + acc.getOwner().getLastName(),
-                acc.getBalance()
+                transactionType,
+                amount,
+                timestamp
             });
         }
     }
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblLogo;
-    private javax.swing.JLabel lblViewAccounts;
+    private javax.swing.JLabel lblTransactionHistory;
     // End of variables declaration//GEN-END:variables
 }

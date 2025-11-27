@@ -6,10 +6,10 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 /**
- * Account class implementing Transactable interface
- * Demonstrates Interface implementation in OOP
+ * Interface Implementation
  */
 public class Account implements Transactable {
+    // Encapsulation: Private fields
     private String accountNumber;
     private double balance;
     private Customer owner;
@@ -30,39 +30,42 @@ public class Account implements Transactable {
         return owner;
     }
     
+    // Interface Implementation
     @Override
     public double getBalance() { 
         return balance; 
     }
 
+    // Interface Implementation
     @Override
     public boolean deposit(double amount) {
         if (amount > 0) {
             balance += amount;
             logTransaction("DEPOSIT: ₱" + amount + " | New Balance: ₱" + balance);
-            System.out.println("Deposited " + amount);
             return true;
-        } else {
-            System.out.println("Invalid amount!");
-            return false;
         }
+        return false;
     }
 
+    // Interface Implementation
     @Override
     public boolean withdraw(double amount) {
         if (amount > 0 && amount <= balance) {
             balance -= amount;
             logTransaction("WITHDRAW: ₱" + amount + " | New Balance: ₱" + balance);
-            System.out.println("Withdrew " + amount);
             return true;
-        } else {
-            System.out.println("Insufficient balance or invalid amount!");
-            return false;
         }
+        return false;
     }
     
+    // Encapsulation
     private void logTransaction(String transaction) {
         String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
         transactionHistory.add("[" + timestamp + "] " + transaction);
+    }
+    
+    // Encapsulation
+    public List<String> getTransactionHistory() {
+        return new ArrayList<>(transactionHistory);
     }
 }
