@@ -7,7 +7,7 @@ import java.time.format.DateTimeFormatter;
 
 /**
  * Account class implementing Transactable interface
- * Demonstrates Interface implementation OOP concept
+ * Demonstrates Interface implementation in OOP
  */
 public class Account implements Transactable {
     private String accountNumber;
@@ -23,8 +23,12 @@ public class Account implements Transactable {
         logTransaction("Account created");
     }
 
-    public String getAccountNumber() { return accountNumber; }
-    public Customer getOwner() { return owner; }
+    public String getAccountNumber() { 
+        return accountNumber;
+    }
+    public Customer getOwner() { 
+        return owner;
+    }
     
     @Override
     public double getBalance() { 
@@ -55,15 +59,6 @@ public class Account implements Transactable {
             System.out.println("Insufficient balance or invalid amount!");
             return false;
         }
-    }
-    
-    @Override
-    public String getTransactionHistory() {
-        StringBuilder history = new StringBuilder("=== Transaction History ===\n");
-        for (String transaction : transactionHistory) {
-            history.append(transaction).append("\n");
-        }
-        return history.toString();
     }
     
     private void logTransaction(String transaction) {

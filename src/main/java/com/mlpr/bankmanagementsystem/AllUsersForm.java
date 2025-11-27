@@ -141,12 +141,11 @@ public class AllUsersForm extends javax.swing.JFrame {
         model.setRowCount(0); // clear existing rows
 
         for (User u : bank.getUsers()) {
-            String role = (u instanceof Admin) ? "Admin" : "Customer";
             model.addRow(new Object[]{
                 u.getUsername(),
                 u.getFirstName(),
                 u.getLastName(),
-                role
+                u.getUserRole(),
             });
         }
     }

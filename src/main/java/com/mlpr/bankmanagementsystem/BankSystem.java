@@ -13,7 +13,7 @@ public class BankSystem implements AccountManageable {
     
     private static final BankSystem instance = new BankSystem();
     
-    private BankSystem() {}
+    public BankSystem() {}
     
     public static BankSystem getInstance() {
         return instance;
@@ -69,26 +69,10 @@ public class BankSystem implements AccountManageable {
                 System.out.println("Account Number: " + acc.getAccountNumber());
                 System.out.println("Owner: " + acc.getOwner().getFullName());
                 System.out.println("Balance: ₱" + acc.getBalance());
-                System.out.println(acc.getTransactionHistory());
                 return;
             }
         }
         System.out.println("Account not found!");
-    }
-    
-    @Override
-    public boolean deleteAccount(String accountNumber) {
-        Iterator<Account> iterator = accounts.iterator();
-        while (iterator.hasNext()) {
-            Account acc = iterator.next();
-            if (acc.getAccountNumber().equals(accountNumber)) {
-                iterator.remove();
-                System.out.println("Account " + accountNumber + " deleted successfully!");
-                return true;
-            }
-        }
-        System.out.println("Account not found!");
-        return false;
     }
     
     public List<Account> getAccounts() { return accounts; }

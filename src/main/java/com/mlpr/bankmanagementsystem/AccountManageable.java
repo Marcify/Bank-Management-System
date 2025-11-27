@@ -7,5 +7,4 @@ package com.mlpr.bankmanagementsystem;
 public interface AccountManageable {
     void createAccount(Customer customer);
     void viewAccountDetails(String accountNumber);
-    boolean deleteAccount(String accountNumber);
 }
