@@ -51,9 +51,7 @@ public abstract class User {
     
     // Encapsulation: Setter with validation
     public void setPassword(String password) {
-        if (password != null && password.length() >= 8) {
-            this.password = password;
-        }
+        this.password = password;
     }
     
     public void setFirstName(String firstName) {
