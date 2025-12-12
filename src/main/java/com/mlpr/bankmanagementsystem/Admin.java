@@ -1,13 +1,3 @@
-/*
-
-    Manapsal, Gabriel
-    Llanes, Joshua
-    Publico, Philip
-    Riparip, Marc
-    BSIT WMA 3B
-
-*/
-
 package com.mlpr.bankmanagementsystem;
 import java.util.*;
 
